@@ -490,15 +490,18 @@ def edge_image_fnames(folder):
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        print("Usage: {} <file_or_folder> [<file2> ...]".format(sys.argv[0]))
-        print("If a file is specified, we produce <file>_analysis.pdf")
-        print("If a folder is specified, we produce a single PDF in that folder, analysing all its JPEG contents")
-        print("Multiple files may be specified, using wildcards if your OS supports it - e.g. myfolder/calib*.jpg")
-        print("In that case, one PDF (./edge_analysis.pdf) is generated for all; the files")
-        print("if multiple folders are specified, or a mix of folders and files, each folder is handled separately as above")
-        print("and all the files are processed together.")
-        print("In the case of multiple files or a folder, we will also save the extracted PSFs in edge_analysis.npz")
-        exit(-1)
+        # print("Usage: {} <file_or_folder> [<file2> ...]".format(sys.argv[0]))
+        # print("If a file is specified, we produce <file>_analysis.pdf")
+        # print("If a folder is specified, we produce a single PDF in that folder, analysing all its JPEG contents")
+        # print("Multiple files may be specified, using wildcards if your OS supports it - e.g. myfolder/calib*.jpg")
+        # print("In that case, one PDF (./edge_analysis.pdf) is generated for all; the files")
+        # print("if multiple folders are specified, or a mix of folders and files, each folder is handled separately as above")
+        # print("and all the files are processed together.")
+        # print("In the case of multiple files or a folder, we will also save the extracted PSFs in edge_analysis.npz")
+        # exit(-1)
+        if os.path.isfile(sys.argv[1]):
+            if sys.argv[1].endswith(".tif"):
+                analyse_files
     if len(sys.argv) == 2 and os.path.isfile(sys.argv[1]):
         # A single file produces a pdf with a name specific to that file, so it's different.
         analyse_file(sys.argv[1], save_plot=True)

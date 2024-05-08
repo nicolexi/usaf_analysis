@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "Python Debugger: Python File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args": ["/media/Saturday/Temporary/xi/MCAM_Re-imaging/abberation test/singlet/center_focus_20240403_180921_945/cam7_0.tif"]
+        }
+    ]
+}
